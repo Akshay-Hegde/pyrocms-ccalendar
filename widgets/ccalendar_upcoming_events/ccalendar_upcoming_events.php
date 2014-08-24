@@ -37,7 +37,6 @@ class Widget_Ccalendar_Upcoming_events extends Widgets
     return array(
       'options' => $options
     );
-
   }
 
   public function run($options)
@@ -47,35 +46,14 @@ class Widget_Ccalendar_Upcoming_events extends Widgets
     $options['limit'] = ( ! empty($options['limit'])) ? $options['limit'] : 5;
     $options['color'] = ( ! empty($options['color'])) ? $options['color'] : "all";
 
-    $module_namespace = 'ccalendar';
-    $tbl_events = 'ccalendar_events';
-
-    $today = strtotime("today 12:00");
-
-    $where = array("date_from >= {$today}");
-
-    if ($options['color'] != 'all') {
-      $where[] = 'color = "'.$options['color'].'"';
-    }
-    
-    $where[] = 'is_published = "1"';
-
-    $params = array(
-      'stream' => $tbl_events,
-      'namespace' => $module_namespace,
-      'sorting' => 'date_from',
-      'sort' => 'ASC',
-      'limit' => $options['limit'],
-      'where' => $where
-    );
-
-    $events = $this->streams->entries->get_entries(
-      $params,
-      array()
+    $this->load->library('ccalendar/Service_Ccalendar');
+    $events = $this->service_ccalendar->get_future_events(
+      $options['limit'], 
+      $options['color']
     );
 
     return array(
-      'ccalendar_events' => $events['entries'],
+      'ccalendar_events' => $events,
       'ccalendar_date_format' => Settings::get('date_format')
     );
   }

@@ -1,0 +1,10 @@
+#loading {
+  display: none;
+  position: absolute;
+  z-index: 10;
+  background-color: rgba(240,240,240,0.5);
+}
+
+#loading-text {
+  text-align: center;
+}

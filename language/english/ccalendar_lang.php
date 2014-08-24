@@ -4,6 +4,8 @@ $lang['ccalendar:module_name']    = 'Ccalendar';
 
 // titles
 $lang['ccalendar:ttl_title']      = 'Ccalendar';
+$lang['ccalendar:ttl_title_front']= 'Calendar';
+
 
 // labels
 $lang['ccalendar:lbl_title']      = 'Event Title';
