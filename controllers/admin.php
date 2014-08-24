@@ -2,10 +2,9 @@
 /**
  * Ccalendar Admin Controller
  *
- * @author    Richard Malibiran - CodeCarabao
- * @website   http://codecarabao.com
- * @package   PyroCMS
- * @subpackage  Ccalendar Client
+ * @license https://github.com/rmalibiran/pyrocms-ccalendar/blob/master/LICENSE
+ * @author    Richard Malibiran
+ * @website   http://richard.malibiran.com
  */
 class Admin extends Admin_Controller
 {

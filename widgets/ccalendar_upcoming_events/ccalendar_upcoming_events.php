@@ -1,5 +1,11 @@
 <?php defined('BASEPATH') or exit('No direct script access allowed');
-
+/**
+ * A widget for upcoming events
+ *
+ * @license https://github.com/rmalibiran/pyrocms-ccalendar/blob/master/LICENSE
+ * @author    Richard Malibiran
+ * @website   http://richard.malibiran.com
+ */
 class Widget_Ccalendar_Upcoming_events extends Widgets
 {
   public $author = 'Richard Malibiran';

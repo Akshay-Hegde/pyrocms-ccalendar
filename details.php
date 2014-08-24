@@ -1,5 +1,11 @@
 <?php defined('BASEPATH') or exit('No direct script access allowed');
-
+/**
+ * Ccalenda Module
+ *
+ * @license https://github.com/rmalibiran/pyrocms-ccalendar/blob/master/LICENSE
+ * @author    Richard Malibiran
+ * @website   http://richard.malibiran.com
+ */
 class Module_Ccalendar extends Module {
 
   public $version = '0.1';
@@ -25,7 +31,7 @@ class Module_Ccalendar extends Module {
         'en' => lang('ccalendar:module_name')
       ),
       'description' => array(
-        'en' => 'A calendar module.'
+        'en' => 'A simple calendar module for PyroCMS (2.2.x)'
       ),
       'frontend' => TRUE,
       'backend' => TRUE,

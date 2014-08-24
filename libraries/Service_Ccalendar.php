@@ -2,7 +2,8 @@
 /**
  * A simple DAO-like library for ccalendar tables
  *
- * @author    Richard Malibiran - CodeCarabao
+ * @license https://github.com/rmalibiran/pyrocms-ccalendar/blob/master/LICENSE
+ * @author    Richard Malibiran
  * @website   http://richard.malibiran.com
  */
 class Service_Ccalendar

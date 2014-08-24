@@ -2,10 +2,9 @@
 /**
  * Ccalendar Public Controller
  *
- * @author    Richard Malibiran - CodeCarabao
- * @website   http://codecarabao.com
- * @package   PyroCMS
- * @subpackage  Ccalendar
+ * @license https://github.com/rmalibiran/pyrocms-ccalendar/blob/master/LICENSE
+ * @author    Richard Malibiran
+ * @website   http://richard.malibiran.com
  */
 class Ccalendar extends Public_Controller
 {

@@ -4,7 +4,6 @@
     margin: 0;
     padding: 0;
     list-style: none;
-    margin-bottom: 20px;
   }
 
   ul.upcoming-events-widget li {
@@ -60,20 +59,19 @@
   ul.upcoming-events-widget li div.event-title {
     padding: 5px;
     display: table-row; 
-  } 
+  }
+
+  div.upcoming-events-widget-link {
+    margin-top: 1px;
+    margin-bottom: 20px;
+  }
+  
    
 </style>
 
 <ul class="upcoming-events-widget">
   <?php foreach($ccalendar_events as $post_widget): ?>
     <li>
-      <?php 
-        // echo anchor(
-        //   'article/'.date('Y/m', $post_widget->created_on) .'/'.$post_widget->slug, 
-        //   $post_widget->title
-        // ) 
-      ?>
-
       <div class="event-wrapper">
         <div class="event-left-panel event-panel" style="background-color: #<?php echo $post_widget['color']['key']; ?>">
         </div>
@@ -103,3 +101,4 @@
     </li>
   <?php endforeach ?>
 </ul>
+<div class="upcoming-events-widget-link"><a href="/ccalendar">View the Calendar</a></div>

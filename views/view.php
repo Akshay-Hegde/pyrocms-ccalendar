@@ -1,4 +1,3 @@
-<?php //var_dump($event); exit;?>
 <div class="ccalendar-view">
   <div class="ccalendar-banner">
     <?php if ($event->banner_image['img']) : ?>

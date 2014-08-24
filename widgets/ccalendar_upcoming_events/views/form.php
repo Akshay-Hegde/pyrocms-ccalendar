@@ -16,5 +16,4 @@
       <label class="radio"><input type="radio" name="color" value="e6e6e6">&nbsp;Neutral</label>
     </div>
   </li>
-  
 </ol>
