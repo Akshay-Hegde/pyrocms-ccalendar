@@ -18,6 +18,15 @@ class Service_Ccalendar
     $this->_CI->load->driver('Streams');
   }
 
+  public function get_event($id) 
+  {
+    return $this->_CI->streams->entries->get_entry(
+      $id,
+      $this->_tbl_events,
+      $this->_module_namespace
+    );
+  }
+
   public function get_events($params)
   {
     // NOTICE: EXTR_PREFIX_ALL automatically adds _ to the prefixed param
@@ -100,6 +109,7 @@ class Service_Ccalendar
 
       if (isset($event['id']) AND $event['id']) {
         $tempArr['id'] = $event['id'];
+        $tempArr['url'] = site_url('ccalendar/view/'.$event['id']);
       }
 
       if (isset($event['date_from']) AND $event['date_from']) {
@@ -111,7 +121,7 @@ class Service_Ccalendar
         
         // @FIXME: doing this just to fix the fullcalendar 
         // bug: long events are minus-one-ed
-        if (isset($tempArr['start']) && $tempArr['start']) {
+        if (isset($tempArr['start']) AND $tempArr['start']) {
           if ($tempArr['start'] != $tempArr['end']) {
             $tempArr['end'] = date('Y-m-d', strtotime("+1 day", $event['date_to']));
           }

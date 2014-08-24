@@ -30,6 +30,8 @@ $lang['ccalendar:msg_edit_entry_error']         = 'There was a problem on saving
 $lang['ccalendar:msg_delete_entry_success']     = 'The calendar event has been deleted.';
 $lang['ccalendar:msg_delete_entry_error']       = 'There was a problem on deleting the event.';
 
+$lang['ccalendar:msg_invalid_event']            = 'Event doesn\'t exist.';
+
 // others
 $lang['ccalendar:folder_name']    = 'Calendar Banners';
 ?>

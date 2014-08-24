@@ -1,18 +1,21 @@
 $(function() {
     
-  $('#calendar').fullCalendar({
+  $('#ccalendar').fullCalendar({
     header: {
-      left: 'prev,next today',
-      center: 'title',
-      right: 'month,basicWeek,basicDay'
+      left: 'prev,next,today',
+      right: 'today,prev,next',
+      center: 'title'
     },
     defaultDate: moment().format('YYYY-MM-DD'),
     editable: false,
     lazyFetching: true,
-    events: '/ccalendar/fetchevents',
+    events: '/ccalendar/getevents',
+    eventRender: function(event, element) {
+      console.log(event, element);
+    },
     loading: function(bool) {
-      var calendarWidth = $('#calendar').width();
-      var calendarHeight = $('#calendar').height();
+      var calendarWidth = $('#ccalendar').width();
+      var calendarHeight = $('#ccalendar').height();
       
       var absCtrHeight = 100;
 

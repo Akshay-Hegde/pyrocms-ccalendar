@@ -40,13 +40,32 @@ class Ccalendar extends Public_Controller
 
     $this->template
     ->title(lang('ccalendar:ttl_title_front'))
+    ->set_breadcrumb(lang('ccalendar:ttl_title_front'))
     ->build('index');
+  }
+
+  public function view($id) 
+  {
+    $this->load->library('ccalendar/Service_Ccalendar');
+    
+    $event = $this->service_ccalendar->get_event($id);
+    if (!$event) {
+      $this->session->set_flashdata('error', lang('ccalendar:msg_invalid_event'));
+      redirect('/ccalendar');
+    }
+    
+    $this->template
+    ->title($event->title)
+    ->set_breadcrumb(lang('ccalendar:ttl_title_front'), '/ccalendar')
+    ->set_breadcrumb($event->title)
+    ->set('event', $event)
+    ->build('view');
   }
 
   /**
   * TODO: make strict json response headers
   */
-  public function fetchevents()
+  public function getevents()
   {
     $this->load->library('ccalendar/Service_Ccalendar');
     $getParams = $this->input->get();
@@ -61,7 +80,7 @@ class Ccalendar extends Public_Controller
 
     $events = $this->service_ccalendar->get_events_range($from, $to);
     $events = $this->service_ccalendar->simplify($events);
-    // var_dump($events); exit;
+    
     echo json_encode($events);
     exit();
   }
